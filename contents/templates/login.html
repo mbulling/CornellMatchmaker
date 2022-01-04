@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+<form method="POST">
+  <br>
+  <h3 align="center" style="font-size:50px;color:red;">CornellMatchmaker</h3>
+  <p align="center">An online questionaire aimed at matching the most compatible Cornell students.</p>
+  <br>
+  <h5 align="center">Valentine's Day is coming soon</h5>
+  <p id="demo" align="center"></p>
+  <br>
+  <h4 align="center">Login to View Profile:</h4>
+  
+
+<script>
+var countDownDate = new Date("Feb 14, 2022 15:37:25").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("demo").innerHTML = days + " days " + hours + " hours "
+  + minutes + " minutes " + seconds + " seconds ";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Enter password"
+    />
+  </div>
+  <br />
+  <button type="submit" style="background-color:red;border-color:red;" class="btn btn-primary">Login</button>
+</form>
+{% endblock %}

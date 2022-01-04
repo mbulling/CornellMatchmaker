@@ -1,0 +1,103 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+content %}
+<form method="POST">
+  <br>
+  <h3 align="center" style="color:red;">Join CornellMatchmaker</h3>
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      name="firstName"
+      placeholder="Enter first name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="school">Select Your School:</label>
+    <select id="school" name="school">
+      <option value="COE">College of Engineering</option>
+      <option value="CALS">College of Arts & Sciences</option>
+      <option value="SHA">School of Hotel Administration</option>
+      <option value="HUMEC">College of Human Ecology</option>
+      <option value="DYSON">Dyson School of Business</option>
+  </select>
+  </div>
+  <div class="form-group">
+    <label for="major">Major</label>
+    <input
+      type="text"
+      class="form-control"
+      id="major"
+      name="major"
+      placeholder="What is your major?"
+    />
+  </div>
+  <div class="form-group">
+    <label for="instagram">Instagram Username</label>
+    <input
+      type="text"
+      class="form-control"
+      id="instagram"
+      name="instagram"
+      placeholder="Input Instagram Username"
+    />
+  </div>
+  <div id="wrapper" class="form-group">
+    <label for="yes_no_radio">Do you like Pineapple on Pizza?</label>
+    <p>
+      <input type="radio" name="pizza" value="1">Yes</input>
+    </p>
+    <p>
+      <input type="radio" name="pizza" value="0">No</input>
+    </p>
+  </div>
+  <div id="wrapper" class="form-group">
+    <label for="vacation">Where is your ideal vacation?</label>
+      <p>
+        <input type="radio" name="vacation" value="0">Paris, France</input>
+      </p>
+      <p>
+        <input type="radio" name="vacation" value="1">Las Vegas, Nevada</input>
+      </p>
+      <p>
+        <input type="radio" name="vacation" value="2">New York City</input>
+      </p>
+      <p>
+        <input type="radio" name="vacation" value="3">Miami, Florida</input>
+      </p>
+  </div>
+  <div class="form-group">
+    <label for="password1">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password1"
+      name="password1"
+      placeholder="Enter password"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password2">Password (Confirm)</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password2"
+      name="password2"
+      placeholder="Confirm password"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
