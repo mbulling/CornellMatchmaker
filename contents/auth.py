@@ -49,6 +49,17 @@ def sign_up():
         partner = request.form.get('partner')
         intro = request.form.get('intro')
         age = request.form.get('age')
+        greek = request.form.get('greek')
+        doors = request.form.get('doors')
+        read = request.form.get('read')
+        sports = request.form.get('sports')
+        drink = request.form.get('drink')
+        smoke = request.form.get('smoke')
+        vegan = request.form.get('vegan')
+        study = request.form.get('study')
+        fish = request.form.get('fish')
+        mac = request.form.get('mac')
+        party = request.form.get('party')
 
 
         user = User.query.filter_by(email=email).first()
@@ -64,7 +75,8 @@ def sign_up():
             flash('Password must be at least 7 characters.', category='error')
         else:
             new_user = User(email=email, first_name=first_name, delimiter=delimiter, password=generate_password_hash(
-                password1, method='sha256'), school=school, identity=identity, type=type, partner=partner, intro=intro, age=age)
+                password1, method='sha256'), school=school, identity=identity, type=type, partner=partner, intro=intro, age=age, greek=greek,
+                doors=doors, read=read, sports=sports, drink=drink, smoke=smoke, vegan=vegan, study=study, fish=fish, mac=mac, party=party)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
