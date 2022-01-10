@@ -40,12 +40,16 @@ def sign_up():
     if request.method == 'POST':
         email = request.form.get('email')
         first_name = request.form.get('firstName')
+        delimiter = '-'
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
         school = request.form.get('school')
-        major = request.form.get('major')
-        instagram = request.form.get('instagram')
-        pizza = request.form.get('pizza')
+        identity = request.form.get('identity')
+        type = request.form.get('type')
+        partner = request.form.get('partner')
+        intro = request.form.get('intro')
+        age = request.form.get('age')
+
 
         user = User.query.filter_by(email=email).first()
         if user:
@@ -59,8 +63,8 @@ def sign_up():
         elif len(password1) < 7:
             flash('Password must be at least 7 characters.', category='error')
         else:
-            new_user = User(email=email, first_name=first_name, password=generate_password_hash(
-                password1, method='sha256'), school=school, major=major, instagram=instagram, pizza=pizza)
+            new_user = User(email=email, first_name=first_name, delimiter=delimiter, password=generate_password_hash(
+                password1, method='sha256'), school=school, identity=identity, type=type, partner=partner, intro=intro, age=age)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)

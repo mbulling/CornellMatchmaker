@@ -2,101 +2,184 @@
 content %}
 <form method="POST">
   <br>
-  <h3 align="center" style="color:red;">Join CornellMatchmaker</h3>
-  <div class="form-group">
-    <label for="email">Email Address</label>
-    <input
-      type="email"
-      class="form-control"
-      id="email"
-      name="email"
-      placeholder="Enter email"
-    />
+  <h3 align="center" style="font-size:40px;">Join CornellMatchmaker</h3>
+  <br>
+  <div class="basic">
+    <h5>Basic Questions:</h5>
+    <br>
+    <div class="form-group">
+      <label for="school">Select Your School:</label>
+      <select id="school" name="school">
+        <option value="COE">College of Engineering</option>
+        <option value="CALS">College of Arts & Sciences</option>
+        <option value="SHA">School of Hotel Administration</option>
+        <option value="HUMEC">College of Human Ecology</option>
+        <option value="DYSON">Dyson School of Business</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="identity">I identify as:</label>
+      <select id="identity" name="identity">
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+        <option value="2">Other</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="age">I am </label>
+      <select id="age" name="age">
+        <option value="0">18-20</option>
+        <option value="1">21+</option>
+    </select>
+      <label>years old</label>
+    </div>
+    <div class="form-group">
+      <label for="type">I am looking for a:</label>
+      <select id="type" name="type">
+        <option value="0">Relationship</option>
+        <option value="1">Friendship</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="partner">I am interesting in finding a:</label>
+      <select id="partner" name="partner">
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+        <option value="2">Other</option>
+    </select>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="firstName">First Name</label>
-    <input
-      type="text"
-      class="form-control"
-      id="firstName"
-      name="firstName"
-      placeholder="Enter first name"
-    />
+  <br>
+  <div class="personal">
+    <h5>Personal Questions:</h5>
+    <br>
+    <div class="form-group">
+      <label for="intro">I would describe myself as an:</label>
+      <select id="intro" name="intro">
+        <option value="0">Introvert</option>
+        <option value="1">Extrovert</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="greek">I am interested in Greek life:</label>
+      <select id="greek" name="greek">
+        <option value="0">Yes</option>
+        <option value="1">No</option>
+        <option value="2">Don't Care</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="doors">I would rather be:</label>
+      <select id="doors" name="doors">
+        <option value="0">Outdoors</option>
+        <option value="1">Indoors</option>
+        <option value="2">Don't Care</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="read">I</label>
+      <select id="read" name="read">
+        <option value="0">enjoy</option>
+        <option value="1">dislike</option>
+        <option value="2">am neutral on</option>
+    </select>
+      <label> reading.</label>
+    </div>
+    <div class="form-group">
+      <label for="sports">I</label>
+      <select id="sports" name="sports">
+        <option value="0">care</option>
+        <option value="1">don't care</option>
+    </select>
+      <label> about sports.</label>
+    </div>
+    <div class="form-group">
+      <label for="drink">I</label>
+      <select id="drink" name="drink">
+        <option value="0">do</option>
+        <option value="1">don't</option>
+    </select>
+      <label> drink alcohol.</label>
+    </div>
+    <div class="form-group">
+      <label for="smoke">I</label>
+      <select id="smoke" name="smoke">
+        <option value="0">do</option>
+        <option value="1">don't</option>
+    </select>
+      <label> smoke.</label>
+    </div>
+    <div class="form-group">
+      <label for="vegan">I</label>
+      <select id="vegan" name="vegan">
+        <option value="0">am</option>
+        <option value="1">am not</option>
+    </select>
+      <label> vegan or vegetarian.</label>
+    </div>
+    <div class="form-group">
+      <label for="study">On average, I study</label>
+      <select id="study" name="study">
+        <option value="0">more than</option>
+        <option value="1">less than</option>
+    </select>
+      <label> five hours per week.</label>
+    </div>
+    <div class="form-group">
+      <label for="fish">I enjoy fishing:</label>
+      <select id="fish" name="fish">
+        <option value="0">Yes</option>
+        <option value="1">No</option>
+        <option value="2">Don't Care</option>
+    </select>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="school">Select Your School:</label>
-    <select id="school" name="school">
-      <option value="COE">College of Engineering</option>
-      <option value="CALS">College of Arts & Sciences</option>
-      <option value="SHA">School of Hotel Administration</option>
-      <option value="HUMEC">College of Human Ecology</option>
-      <option value="DYSON">Dyson School of Business</option>
-  </select>
+  <br>
+  <div class="acc">
+    <h5>Account Setup:</h5>
+    <br>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Enter email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="firstName">NetID</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        name="firstName"
+        placeholder="Enter first name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password1">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password1"
+        name="password1"
+        placeholder="Enter password"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password2">Password (Confirm)</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password2"
+        name="password2"
+        placeholder="Confirm password"
+      />
+    </div>
   </div>
-  <div class="form-group">
-    <label for="major">Major</label>
-    <input
-      type="text"
-      class="form-control"
-      id="major"
-      name="major"
-      placeholder="What is your major?"
-    />
-  </div>
-  <div class="form-group">
-    <label for="instagram">Instagram Username</label>
-    <input
-      type="text"
-      class="form-control"
-      id="instagram"
-      name="instagram"
-      placeholder="Input Instagram Username"
-    />
-  </div>
-  <div id="wrapper" class="form-group">
-    <label for="yes_no_radio">Do you like Pineapple on Pizza?</label>
-    <p>
-      <input type="radio" name="pizza" value="1">Yes</input>
-    </p>
-    <p>
-      <input type="radio" name="pizza" value="0">No</input>
-    </p>
-  </div>
-  <div id="wrapper" class="form-group">
-    <label for="vacation">Where is your ideal vacation?</label>
-      <p>
-        <input type="radio" name="vacation" value="0">Paris, France</input>
-      </p>
-      <p>
-        <input type="radio" name="vacation" value="1">Las Vegas, Nevada</input>
-      </p>
-      <p>
-        <input type="radio" name="vacation" value="2">New York City</input>
-      </p>
-      <p>
-        <input type="radio" name="vacation" value="3">Miami, Florida</input>
-      </p>
-  </div>
-  <div class="form-group">
-    <label for="password1">Password</label>
-    <input
-      type="password"
-      class="form-control"
-      id="password1"
-      name="password1"
-      placeholder="Enter password"
-    />
-  </div>
-  <div class="form-group">
-    <label for="password2">Password (Confirm)</label>
-    <input
-      type="password"
-      class="form-control"
-      id="password2"
-      name="password2"
-      placeholder="Confirm password"
-    />
-  </div>
+  
   <br />
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
