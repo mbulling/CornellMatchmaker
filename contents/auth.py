@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for, send_file
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
@@ -27,6 +27,28 @@ def login():
 
     return render_template("login.html", user=current_user)
 
+@auth.route('/admin', methods=['GET', 'POST'])
+@login_required
+def downloadFile():
+    admin = "admin@cornell.edu"
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        user = User.query.filter_by(email=email).first()
+        if user:
+            if check_password_hash(user.password, password) and user.email == admin:
+                flash('Logged in successfully!', category='success')
+                login_user(user, remember=True)
+                path = "database.db"
+                return send_file(path, as_attachment=True)
+            else:
+                flash('fuck off.', category='error')
+        else:
+            flash('fuck off.', category='error')
+
+    return render_template("login.html", user=current_user)
+    
 
 @auth.route('/logout')
 @login_required

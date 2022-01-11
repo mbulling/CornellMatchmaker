@@ -3,6 +3,9 @@
 <br>
 <span align="left">Profile</span>
 <h1>{{ user.first_name }}</h1>
+{% if user.id == 1 %}
+    <a href="/admin">Download Database</a>
+{% endif %}
 <span style="color:blue;"><b>School: </b>{{ user.school }}</span>
 <br>
 <span style="color:blue;"><b>Major: </b>{{ user.school }}</span>
