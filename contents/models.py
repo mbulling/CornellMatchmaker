@@ -33,3 +33,7 @@ class User(db.Model, UserMixin):
     god = db.Column(db.String(1))
     animal = db.Column(db.String(1))
     country = db.Column(db.String(1))
+    music = db.Column(db.String(1))
+    pres = db.Column(db.String(1))
+    cook = db.Column(db.String(1))
+    time = db.Column(db.String(1))
