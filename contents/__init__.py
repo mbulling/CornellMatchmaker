@@ -36,6 +36,8 @@ def create_app():
 
 
 def create_database(app):
-    if not path.exists(DB_NAME):
+    try:
+        db.connect()
+    except:
         db.create_all(app=app)
         print('Created Database!')
