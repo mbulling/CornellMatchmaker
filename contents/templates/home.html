@@ -3,30 +3,20 @@
 <br>
 <span align="left">Profile</span>
 <h1>{{ user.first_name }}</h1>
+{% if user.school == "COE" %} 
+<span>College of Engineering</span>
+<br>
+{% endif %}
+
 {% if user.id == 1 %}
     <a href="/admin">Download Database</a>
+    <br>
 {% endif %}
-<span style="color:blue;"><b>School: </b>{{ user.school }}</span>
-<br>
-<span style="color:blue;"><b>Major: </b>{{ user.school }}</span>
-<br>
-<span style="color:blue;"><b>Pineapple on Pizza: </b>{{ user.school }}</span>
-<br>
-<ul class="list-group list-group-flush" id="notes">
-  {% for note in user.notes %}
-  <li class="list-group-item">
-    {{ note.data }}
-    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </li>
-  {% endfor %}
-</ul>
-<form method="POST">
-  <textarea name="note" id="note" class="form-control"></textarea>
-  <br />
-  <div align="center">
-    <button type="submit" class="btn btn-primary">Add Note</button>
-  </div>
-</form>
+
+
+
+
+
+<h3 align="center">Matches will be released by February 10th!</h3>
 {% endblock %}
+

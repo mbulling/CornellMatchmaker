@@ -82,6 +82,9 @@ def sign_up():
         fish = request.form.get('fish')
         mac = request.form.get('mac')
         party = request.form.get('party')
+        god = request.form.get('god')
+        animal = request.form.get('animal')
+        country = request.form.get('country')
 
 
         user = User.query.filter_by(email=email).first()
@@ -98,7 +101,8 @@ def sign_up():
         else:
             new_user = User(email=email, first_name=first_name, delimiter=delimiter, password=generate_password_hash(
                 password1, method='sha256'), school=school, identity=identity, type=type, partner=partner, intro=intro, age=age, greek=greek,
-                doors=doors, read=read, sports=sports, drink=drink, smoke=smoke, vegan=vegan, study=study, fish=fish, mac=mac, party=party)
+                doors=doors, read=read, sports=sports, drink=drink, smoke=smoke, vegan=vegan, study=study, fish=fish, mac=mac, party=party,
+                god=god, animal=animal, country=country)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
