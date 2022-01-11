@@ -43,11 +43,13 @@
 <br>
 {% endif %}
 
-{% if user.id == 1 %}
+{% if user.email == "admin@cornell.edu" %}
     <a href="/admin">Download Database</a>
     <br>
 {% endif %}
 
 <h3 align="center">Matches will be released by February 10th!</h3>
+<br>
+<span align="center">Thank you for participating.</span>
 {% endblock %}
 

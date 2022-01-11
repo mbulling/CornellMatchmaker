@@ -29,7 +29,6 @@ class User(db.Model, UserMixin):
     vegan = db.Column(db.String(1))
     study = db.Column(db.String(1))
     fish = db.Column(db.String(1))
-    mac = db.Column(db.String(1))
     party = db.Column(db.String(1))
     god = db.Column(db.String(1))
     animal = db.Column(db.String(1))
