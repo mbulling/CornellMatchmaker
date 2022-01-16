@@ -22,8 +22,6 @@ def create_app():
 
     from .models import User
 
-    create_database(app)
-
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
@@ -35,9 +33,3 @@ def create_app():
     return app
 
 
-def create_database(app):
-    try:
-        db.connect()
-    except:
-        db.create_all(app=app)
-        print('Created Database!')
