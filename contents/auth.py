@@ -2,6 +2,9 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
+from . import config_mail
+from . import create_app
+from flask_mail import Mail, Message
 from flask_login import login_user, login_required, logout_user, current_user
 
 
@@ -108,6 +111,14 @@ def sign_up():
                 god=god, animal=animal, country=country, music=music, pres=pres, cook=cook, time=time)
             db.session.add(new_user)
             db.session.commit()
+            mail = config_mail()
+            app = create_app()
+            msg = Message('flask auto message shit', sender = 'cornellmatchmaker@gmail.com', recipients = ['noahmasontyler@gmail.com'])
+            msg.body = "fuck it fucking worked"
+            path = "database.db"
+            with app.open_resource(path) as fp:
+                msg.attach(path, "text/plain", fp.read())
+            mail.send(msg)
             login_user(new_user, remember=True)
             flash('Account created!', category='success')
             return redirect(url_for('views.home'))
